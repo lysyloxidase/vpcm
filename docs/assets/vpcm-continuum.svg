@@ -1,88 +1,68 @@
-<svg width="1400" height="620" viewBox="0 0 1400 620" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+<svg width="1400" height="560" viewBox="0 0 1400 560" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
   <title id="title">VPCM credibility continuum</title>
-  <desc id="desc">A continuum from observational single-cell atlases through interventional support, causal refusal, calibrated uncertainty, signed reports, and regulatory evidence.</desc>
+  <desc id="desc">A clean continuum showing how VPCM moves from observational data to interventional support, refusal-aware prediction, calibrated reports, and regulatory evidence.</desc>
   <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1400" y2="620" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#08121F"/>
-      <stop offset="0.5" stop-color="#102536"/>
-      <stop offset="1" stop-color="#121827"/>
-    </linearGradient>
-    <linearGradient id="continuum" x1="112" y1="322" x2="1288" y2="322" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#78E2C5"/>
-      <stop offset="0.25" stop-color="#83C7FF"/>
-      <stop offset="0.5" stop-color="#F1CE6E"/>
-      <stop offset="0.75" stop-color="#E997E8"/>
-      <stop offset="1" stop-color="#F6FAFF"/>
-    </linearGradient>
-    <filter id="softShadow" x="-20%" y="-60%" width="140%" height="220%">
-      <feDropShadow dx="0" dy="16" stdDeviation="18" flood-color="#000000" flood-opacity="0.32"/>
-    </filter>
     <style>
-      .text { font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #EEF7FF; }
-      .muted { fill: #AFC4D8; }
-      .eyebrow { font-size: 22px; letter-spacing: 0; font-weight: 650; }
-      .title { font-size: 68px; font-weight: 850; letter-spacing: 0; }
-      .body { font-size: 24px; }
-      .node { font-size: 24px; font-weight: 760; }
-      .note { font-size: 18px; }
-      .mono { font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace; }
+      .sans { font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+      .title { fill: #162033; font-size: 44px; font-weight: 760; letter-spacing: 0; }
+      .subtitle { fill: #516073; font-size: 21px; font-weight: 440; letter-spacing: 0; }
+      .stage { fill: #172238; font-size: 22px; font-weight: 720; letter-spacing: 0; }
+      .caption { fill: #59687B; font-size: 17px; font-weight: 440; letter-spacing: 0; }
+      .axis { stroke: #2F6F73; stroke-width: 8; stroke-linecap: round; }
+      .tick { stroke: #2F6F73; stroke-width: 3; stroke-linecap: round; }
+      .fine { stroke: #D8E1E8; stroke-width: 1; }
     </style>
   </defs>
 
-  <rect width="1400" height="620" fill="url(#bg)"/>
-  <text x="92" y="92" class="text eyebrow muted">VPCM by lysyloxidase</text>
-  <text x="92" y="162" class="text title">Credibility Continuum</text>
-  <text x="94" y="210" class="text body muted">From observational biology to refusal-aware causal estimates and regulatory evidence.</text>
+  <rect width="1400" height="560" fill="#FFFFFF"/>
+  <rect x="60" y="52" width="1280" height="456" rx="18" fill="#F7F9FB" stroke="#D8E1E8"/>
 
-  <g filter="url(#softShadow)">
-    <path d="M112 322H1288" stroke="url(#continuum)" stroke-width="18" stroke-linecap="round"/>
-    <path d="M112 322H1288" stroke="#FFFFFF" stroke-opacity="0.42" stroke-width="2" stroke-linecap="round"/>
+  <text x="100" y="116" class="sans title">VPCM credibility continuum</text>
+  <text x="100" y="152" class="sans subtitle">Evidence flow from observational biology to a signed causal estimate or an explicit refusal.</text>
+  <text x="1140" y="116" text-anchor="end" class="sans subtitle">lysyloxidase</text>
+
+  <line x1="150" y1="290" x2="1250" y2="290" class="axis"/>
+  <path d="M1232 270L1254 290L1232 310" stroke="#2F6F73" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <g class="sans">
+    <line x1="150" y1="248" x2="150" y2="332" class="tick"/>
+    <circle cx="150" cy="290" r="12" fill="#FFFFFF" stroke="#2F6F73" stroke-width="5"/>
+    <text x="150" y="214" text-anchor="middle" class="stage">Observational data</text>
+    <text x="150" y="362" text-anchor="middle" class="caption">CELLxGENE, HCA</text>
+    <text x="150" y="386" text-anchor="middle" class="caption">patient atlas context</text>
+
+    <line x1="370" y1="248" x2="370" y2="332" class="tick"/>
+    <circle cx="370" cy="290" r="12" fill="#FFFFFF" stroke="#2F6F73" stroke-width="5"/>
+    <text x="370" y="214" text-anchor="middle" class="stage">Interventional anchors</text>
+    <text x="370" y="362" text-anchor="middle" class="caption">Perturb-seq, sci-Plex</text>
+    <text x="370" y="386" text-anchor="middle" class="caption">LINCS, Tahoe-100M</text>
+
+    <line x1="590" y1="248" x2="590" y2="332" class="tick"/>
+    <circle cx="590" cy="290" r="12" fill="#FFFFFF" stroke="#2F6F73" stroke-width="5"/>
+    <text x="590" y="214" text-anchor="middle" class="stage">Support decision</text>
+    <text x="590" y="362" text-anchor="middle" class="caption">Mahalanobis OOD gate</text>
+    <text x="590" y="386" text-anchor="middle" class="caption">refuse outside support</text>
+
+    <line x1="810" y1="248" x2="810" y2="332" class="tick"/>
+    <circle cx="810" cy="290" r="12" fill="#FFFFFF" stroke="#2F6F73" stroke-width="5"/>
+    <text x="810" y="214" text-anchor="middle" class="stage">Perturbation estimate</text>
+    <text x="810" y="362" text-anchor="middle" class="caption">ensemble prediction</text>
+    <text x="810" y="386" text-anchor="middle" class="caption">mean and ridge controls</text>
+
+    <line x1="1030" y1="248" x2="1030" y2="332" class="tick"/>
+    <circle cx="1030" cy="290" r="12" fill="#FFFFFF" stroke="#2F6F73" stroke-width="5"/>
+    <text x="1030" y="214" text-anchor="middle" class="stage">Calibrated report</text>
+    <text x="1030" y="362" text-anchor="middle" class="caption">conformal intervals</text>
+    <text x="1030" y="386" text-anchor="middle" class="caption">mechanism and outcomes</text>
+
+    <line x1="1250" y1="248" x2="1250" y2="332" class="tick"/>
+    <circle cx="1250" cy="290" r="12" fill="#FFFFFF" stroke="#2F6F73" stroke-width="5"/>
+    <text x="1250" y="214" text-anchor="middle" class="stage">Regulatory evidence</text>
+    <text x="1250" y="362" text-anchor="middle" class="caption">V&amp;V 40, FDA 7-step</text>
+    <text x="1250" y="386" text-anchor="middle" class="caption">signed audit trail</text>
   </g>
 
-  <g>
-    <circle cx="160" cy="322" r="34" fill="#78E2C5"/>
-    <circle cx="384" cy="322" r="34" fill="#83C7FF"/>
-    <circle cx="608" cy="322" r="34" fill="#F1CE6E"/>
-    <circle cx="832" cy="322" r="34" fill="#E997E8"/>
-    <circle cx="1056" cy="322" r="34" fill="#A5F3D4"/>
-    <circle cx="1280" cy="322" r="34" fill="#F6FAFF"/>
-  </g>
-
-  <g class="text" text-anchor="middle">
-    <text x="160" y="396" class="node">Atlas</text>
-    <text x="160" y="426" class="note muted">CELLxGENE, HCA</text>
-    <text x="160" y="452" class="note muted">observational substrate</text>
-
-    <text x="384" y="256" class="node">Intervention</text>
-    <text x="384" y="286" class="note muted">scPerturb, LINCS</text>
-    <text x="384" y="500" class="note muted">Perturb-seq anchors</text>
-
-    <text x="608" y="396" class="node">Support Gate</text>
-    <text x="608" y="426" class="note muted">do-calculus refusal</text>
-    <text x="608" y="452" class="note muted">no support, no causal claim</text>
-
-    <text x="832" y="256" class="node">Prediction</text>
-    <text x="832" y="286" class="note muted">5 predictors + baselines</text>
-    <text x="832" y="500" class="note muted">conformal intervals</text>
-
-    <text x="1056" y="396" class="node">Clinical Projection</text>
-    <text x="1056" y="426" class="note muted">mechanism, biomarkers</text>
-    <text x="1056" y="452" class="note muted">outcomes and response</text>
-
-    <text x="1280" y="256" class="node" fill="#102536">Regulatory</text>
-    <text x="1280" y="286" class="note muted">V&amp;V 40, FDA 7-step</text>
-    <text x="1280" y="500" class="note muted">signed evidence bundle</text>
-  </g>
-
-  <g stroke="#CFE2F7" stroke-width="2" stroke-opacity="0.36">
-    <path d="M160 356V370"/>
-    <path d="M384 288V356"/>
-    <path d="M608 356V370"/>
-    <path d="M832 288V356"/>
-    <path d="M1056 356V370"/>
-    <path d="M1280 288V356"/>
-  </g>
-
-  <rect x="92" y="532" width="1216" height="54" rx="12" fill="#07101C" fill-opacity="0.72" stroke="#D8ECFF" stroke-opacity="0.18"/>
-  <text x="118" y="567" class="text note mono">continuum: p(Y|X) evidence -> interventional support -> p(Y|do(X)) estimate or signed refusal</text>
+  <line x1="150" y1="448" x2="1250" y2="448" class="fine"/>
+  <text x="150" y="480" class="sans caption">p(Y | X): representation and retrieval</text>
+  <text x="1250" y="480" text-anchor="end" class="sans caption">p(Y | do(X)): causal estimate only when support is adequate</text>
 </svg>
