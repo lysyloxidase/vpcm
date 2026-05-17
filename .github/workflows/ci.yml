@@ -26,6 +26,8 @@ jobs:
           python -m pip install -e "packages/vpcm_lora[dev]"
           python -m pip install -e "packages/vpcm_mechanism[dev]"
           python -m pip install -e "packages/vpcm_biomarker[dev]"
+          python -m pip install -e "packages/vpcm_outcome[dev]"
+          python -m pip install -e "packages/vpcm_pipeline[dev]"
       - name: Ruff
         run: ruff check .
       - name: Pyright strict

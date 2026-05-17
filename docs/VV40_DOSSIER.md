@@ -79,3 +79,18 @@ outcome modeling evidence.
 8. CellChat v2, LIANA+, NicheNet, TCR, and spatial heads run on dummy data.
 9. Audit logs capture mechanism and biomarker projections with method traces.
 10. Ruff, pyright strict, pytest, coverage, and DOI checks pass.
+
+## Phase 6 Quality Gates
+
+1. DeepSurv TCGA-style held-out C-index fixture is >=0.70.
+2. DeepHit competing-risks C-index fixture is >=0.65.
+3. Immunotherapy response classifier pooled held-out AUROC fixture is >=0.72.
+4. End-to-end `VPCM.predict()` runs in <60 seconds excluding LoRA fit.
+5. Signed report JSON round-trips through Ed25519 verification.
+6. Report PDF-like artifact contains all 10 required sections, including the
+   mandatory Section F beat-the-mean / beat-ridge section.
+7. Synthetic OOD intervention returns `RefusalReport`.
+8. FastAPI fixture service handles 10 concurrent prediction calls.
+9. Audit log captures every prediction with provenance.
+10. Two identical fixed-seed fixture runs produce identical signed reports.
+11. Ruff, pyright strict, pytest, coverage, and DOI checks pass.

@@ -85,6 +85,28 @@
 | `bagaev_type` | Projected tumor microenvironment class. |
 | `responder_probability` | IFN-gamma / exhaustion-derived immunotherapy response score. |
 
+## Outcome Report Fields
+
+| Field | Meaning |
+|---|---|
+| `hazard_ratio` | DeepSurv-style Cox-PH hazard ratio. |
+| `hazard_interval` | Conformal predictive interval around the hazard ratio. |
+| `median_pfs_months` | Predicted median progression-free survival. |
+| `median_os_months` | Predicted median overall survival. |
+| `risk_probabilities` | DeepHit-style competing risk probabilities. |
+| `responder_probability` | Immunotherapy responder classifier probability. |
+| `conformal_interval` | Calibrated response probability interval. |
+
+## Signed VPCM Report Fields
+
+| Field | Meaning |
+|---|---|
+| `payload` | Deterministic machine-readable VPCM report. |
+| `payload_hash` | SHA-256 hash of the canonical payload. |
+| `signature` | Ed25519 detached signature and public key. |
+| `baseline_report` | Mandatory train-mean/ridge transparency section. |
+| `refusal_flag` | Whether the causal support gate refused the query. |
+
 ## Identifier Standards
 
 - Genes: Ensembl IDs, human GENCODE v45 / Ensembl 111.

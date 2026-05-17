@@ -26,5 +26,7 @@ jobs:
           python -m pip install -e "packages/vpcm_lora[dev]"
           python -m pip install -e "packages/vpcm_mechanism[dev]"
           python -m pip install -e "packages/vpcm_biomarker[dev]"
+          python -m pip install -e "packages/vpcm_outcome[dev]"
+          python -m pip install -e "packages/vpcm_pipeline[dev]"
       - name: Enforce 85 percent coverage
-        run: pytest --cov=vpcm_core --cov=vpcm_data --cov=vpcm_models --cov=vpcm_baselines --cov=vpcm_perturbation --cov=vpcm_causal --cov=vpcm_conformal --cov=vpcm_lora --cov=vpcm_mechanism --cov=vpcm_biomarker --cov-report=xml --cov-fail-under=85
+        run: pytest --cov=vpcm_core --cov=vpcm_data --cov=vpcm_models --cov=vpcm_baselines --cov=vpcm_perturbation --cov=vpcm_causal --cov=vpcm_conformal --cov=vpcm_lora --cov=vpcm_mechanism --cov=vpcm_biomarker --cov=vpcm_outcome --cov=vpcm_pipeline --cov-report=xml --cov-fail-under=85

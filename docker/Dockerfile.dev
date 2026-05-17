@@ -31,6 +31,8 @@ RUN python3.11 -m pip install --upgrade pip \
     && python3.11 -m pip install -e "packages/vpcm_conformal[dev,mapie]" \
     && python3.11 -m pip install -e "packages/vpcm_lora[dev,peft]" \
     && python3.11 -m pip install -e "packages/vpcm_mechanism[dev,bio]" \
-    && python3.11 -m pip install -e "packages/vpcm_biomarker[dev,bio]"
+    && python3.11 -m pip install -e "packages/vpcm_biomarker[dev,bio]" \
+    && python3.11 -m pip install -e "packages/vpcm_outcome[dev,pycox,multiomics]" \
+    && python3.11 -m pip install -e "packages/vpcm_pipeline[dev,api,reports]"
 
 CMD ["bash"]

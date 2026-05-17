@@ -32,6 +32,10 @@ RDKit, PyTorch, and downstream model work.
   attention attribution caveats.
 - `packages/vpcm_biomarker`: CIBERSORTx-style pseudo-bulk projection, organ
   ridge lab heads, Bagaev TME signatures, TCR repertoire, and spatial context.
+- `packages/vpcm_outcome`: DeepSurv, DeepHit, immunotherapy response, and
+  multi-omic fusion outcome heads.
+- `packages/vpcm_pipeline`: single signed `VPCM.predict()` API, report bundle
+  generation, provenance, and FastAPI inference entrypoint.
 - `.github/workflows`: ruff, pyright strict, pytest, coverage, and nightly DOI
   verification.
 - `docs`: COU, FDA 7-step mapping, V&V40 dossier scaffold, architecture,
@@ -50,6 +54,8 @@ python -m pip install -e "packages/vpcm_core[dev]"
 python -m pip install -e "packages/vpcm_data[dev]"
 python -m pip install -e "packages/vpcm_mechanism[dev]"
 python -m pip install -e "packages/vpcm_biomarker[dev]"
+python -m pip install -e "packages/vpcm_outcome[dev]"
+python -m pip install -e "packages/vpcm_pipeline[dev]"
 make ruff
 make pyright
 make coverage

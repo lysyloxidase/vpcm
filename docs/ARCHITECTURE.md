@@ -12,7 +12,7 @@ VPCM is organized as a staged monorepo:
   patient-specific adapters.
 - Phase 5: `vpcm_mechanism` and `vpcm_biomarker` add pathway and biomarker
   projection.
-- Phase 6: `vpcm_outcome` and `vpcm_pipeline` will add outcome modeling and
+- Phase 6: `vpcm_outcome` and `vpcm_pipeline` add outcome modeling and
   orchestration.
 - Phase 7: `vpcm_regulatory` will generate the V&V40 dossier.
 
@@ -50,3 +50,11 @@ per-cell-type deltas to pseudo-bulk tissue deltas; `OrganRidgeProjectors`,
 `TMESignatureHeads`, `TCRRepertoireHead`, and
 `SpatialTranscriptomicsIntegrator` project those changes to lab values, TME
 state, TCR context, and spatial context.
+
+The Phase 6 outcome layer exposes DeepSurv-style survival prediction,
+DeepHit-style competing risks, conformal immunotherapy response prediction, and
+optional multi-omic fusion. `VPCM.predict()` composes all prior phases into one
+audited call: optional patient LoRA, do-calculus refusal, perturbation ensemble,
+conformal intervals, mechanism interpretation, biomarker projection, outcome
+heads, mandatory baseline deltas, signed JSON, PDF-like report bundle, and
+audit/provenance outputs.

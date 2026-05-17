@@ -1,0 +1,28 @@
+deepsurv:
+  c_index_threshold: 0.70
+  cohorts:
+    - TCGA-BRCA
+    - TCGA-LUAD
+    - TCGA-COAD
+deephit:
+  c_index_threshold: 0.65
+  competing_risks:
+    - progression
+    - death_from_disease
+    - death_from_other_causes
+    - toxicity_discontinuation
+response_classifier:
+  auroc_threshold: 0.72
+  alpha: 0.1
+  cohorts:
+    - Liu 2019
+    - Riaz 2017
+    - Hugo 2016
+    - Bagaev 2021
+multiomic_fusion:
+  optional: true
+  tools:
+    - MOFA+
+    - totalVI
+    - MultiVI
+

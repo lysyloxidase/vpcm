@@ -37,3 +37,11 @@
   TME signatures, optional TCR repertoire integration, and optional spatial
   transcriptomics integration.
 - Add projection audit-log trace coverage and Phase 5 quality gates.
+
+## 0.6.0
+
+- Add DeepSurv, DeepHit, immunotherapy response, and multi-omic fusion outcome
+  heads.
+- Add deterministic Ed25519 signed report JSON and report bundle generation.
+- Add end-to-end `VPCM.predict()` composition across Phases 1-6.
+- Add FastAPI inference entrypoint and Phase 6 quality-gate tests.

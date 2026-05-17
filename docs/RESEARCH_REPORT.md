@@ -159,3 +159,39 @@ Optional `TCRRepertoireHead` and `SpatialTranscriptomicsIntegrator` add matched
 TCR-seq and spatial transcriptomics context when those modalities are present.
 Missing optional modalities are reported explicitly rather than imputed as zero
 evidence.
+
+## Phase 6 Outcome Modeling
+
+The outcome layer adds survival, competing-risk, and response prediction heads
+on top of Phase 5 biomarker and TME outputs. `DeepSurvHead` follows the Cox-PH
+deep network framing from Katzman et al., 10.1186/s12874-018-0482-1, and
+returns hazard ratio, predictive interval, median PFS/OS, risk quartile, and a
+held-out C-index fixture gate. `DeepHitHead` covers competing cancer risks:
+progression, death from disease, death from other causes, and toxicity
+discontinuation.
+
+`ImmunotherapyResponseClassifier` combines Bagaev TME type, IFN-gamma score,
+TMB projection, CD8/T-cell context, exhaustion, and biomarker features into a
+conformal responder probability. `MultiomicFusion` records optional scRNA,
+scATAC, CITE-seq, proteomics, and metabolomics features using MOFA+, totalVI,
+and MultiVI-style summary surfaces. Optional modalities remain explicit when
+missing.
+
+## Phase 6 End-to-End Prediction API
+
+`VPCM.predict()` composes every credibility primitive into one signed call:
+
+1. QC-normalize patient AnnData-like input and hash it.
+2. Optionally fit patient-specific LoRA adapters.
+3. Check interventional support and return `RefusalReport` for synthetic OOD.
+4. Run the five-predictor perturbation ensemble and mandatory baselines.
+5. Construct CQR and Mondrian conformal intervals.
+6. Project mechanism, GRN, and cell-cell communication reports.
+7. Project pseudo-bulk, organ biomarkers, and TME state.
+8. Predict survival, competing risks, and immunotherapy response.
+9. Emit mandatory beat-the-mean / beat-ridge transparency.
+10. Sign the machine-readable JSON and write report/provenance artifacts.
+
+The report bundle contains `report.json`, `report.pdf`, `audit.jsonl`, and
+`provenance.yaml`. Section F of the PDF-like artifact is reserved for the
+non-negotiable Csendes/Ahlmann-Eltze baseline comparison.

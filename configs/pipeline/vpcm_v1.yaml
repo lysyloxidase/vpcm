@@ -1,0 +1,12 @@
+predict:
+  latency_budget_seconds_excluding_lora: 60
+  default_alpha: 0.1
+  fit_lora_default: true
+report_bundle:
+  signed_json: true
+  pdf_sections: 10
+  mandatory_baseline_section: Section F
+api:
+  title: VPCM Inference API v1.0
+  max_concurrent_fixture_requests: 10
+

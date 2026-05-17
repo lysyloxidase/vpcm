@@ -1,0 +1,2 @@
+"""VPCM FastAPI application."""
+
