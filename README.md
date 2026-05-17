@@ -23,6 +23,10 @@ RDKit, PyTorch, and downstream model work.
   MC-dropout uncertainty.
 - `packages/vpcm_causal`: interventional support manifold and do-calculus
   refusal gate.
+- `packages/vpcm_conformal`: split conformal, Mondrian conformal, CQR, and
+  lifecycle coverage audits.
+- `packages/vpcm_lora`: patient-specific rank-8 LoRA adapters, atlas retrieval,
+  and patient covariate encoding.
 - `.github/workflows`: ruff, pyright strict, pytest, coverage, and nightly DOI
   verification.
 - `docs`: COU, FDA 7-step mapping, V&V40 dossier scaffold, architecture,

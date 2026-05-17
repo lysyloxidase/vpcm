@@ -33,12 +33,16 @@ include = [
   "packages/vpcm_baselines/src",
   "packages/vpcm_perturbation/src",
   "packages/vpcm_causal/src",
+  "packages/vpcm_conformal/src",
+  "packages/vpcm_lora/src",
   "packages/vpcm_core/tests",
   "packages/vpcm_data/tests",
   "packages/vpcm_models/tests",
   "packages/vpcm_baselines/tests",
   "packages/vpcm_perturbation/tests",
   "packages/vpcm_causal/tests",
+  "packages/vpcm_conformal/tests",
+  "packages/vpcm_lora/tests",
   "scripts",
 ]
 pythonVersion = "3.9"
@@ -51,6 +55,8 @@ extraPaths = [
   "packages/vpcm_baselines/src",
   "packages/vpcm_perturbation/src",
   "packages/vpcm_causal/src",
+  "packages/vpcm_conformal/src",
+  "packages/vpcm_lora/src",
 ]
 
 [tool.pytest.ini_options]
@@ -62,6 +68,8 @@ testpaths = [
   "packages/vpcm_baselines/tests",
   "packages/vpcm_perturbation/tests",
   "packages/vpcm_causal/tests",
+  "packages/vpcm_conformal/tests",
+  "packages/vpcm_lora/tests",
 ]
 pythonpath = [
   "packages/vpcm_core/src",
@@ -70,6 +78,8 @@ pythonpath = [
   "packages/vpcm_baselines/src",
   "packages/vpcm_perturbation/src",
   "packages/vpcm_causal/src",
+  "packages/vpcm_conformal/src",
+  "packages/vpcm_lora/src",
 ]
 
 [tool.coverage.run]
@@ -81,6 +91,8 @@ source = [
   "vpcm_baselines",
   "vpcm_perturbation",
   "vpcm_causal",
+  "vpcm_conformal",
+  "vpcm_lora",
 ]
 
 [tool.coverage.report]

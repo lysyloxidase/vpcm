@@ -1,0 +1,12 @@
+rank: 8
+max_epochs: 5
+atlas_neighbors_k: 50000
+min_patient_cells: 5000
+vram_overhead_gb_max: 1.0
+h100_budget_minutes: 30
+covariates:
+  patient_embedding_dim: 64
+  ancestry_stratified_prs_required: true
+audit:
+  log_every_adapter_fit: true
+

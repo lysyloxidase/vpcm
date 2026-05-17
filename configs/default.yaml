@@ -5,6 +5,8 @@ defaults:
   - baselines: mandatory
   - perturbation: ensemble
   - causal: support_manifold
+  - conformal: fda_grade
+  - lora: patient_specific
   - _self_
 
 context_of_use:

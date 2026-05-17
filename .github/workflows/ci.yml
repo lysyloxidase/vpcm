@@ -22,6 +22,8 @@ jobs:
           python -m pip install -e "packages/vpcm_baselines[dev]"
           python -m pip install -e "packages/vpcm_perturbation[dev]"
           python -m pip install -e "packages/vpcm_causal[dev]"
+          python -m pip install -e "packages/vpcm_conformal[dev]"
+          python -m pip install -e "packages/vpcm_lora[dev]"
       - name: Ruff
         run: ruff check .
       - name: Pyright strict

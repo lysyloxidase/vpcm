@@ -32,3 +32,10 @@ MC-dropout standard deviation, per-model deltas, and baseline deltas. The
 causal layer builds an interventional support manifold from Perturb-seq,
 sci-Plex, Tahoe-100M, and LINCS anchors. Queries outside calibrated support
 return `RefusalReport` instead of a causal estimate.
+
+The Phase 4 uncertainty layer applies distribution-free conformal intervals
+around any model output. `SplitConformalPredictor` provides marginal coverage,
+`MondrianConformalPredictor` calibrates cell-type-specific coverage, and
+`ConformalizedQuantileRegression` provides adaptive per-gene intervals.
+`PatientLoRATrainer` trains frozen-foundation-model rank-8 adapters per
+patient x cell type while preserving audit traces and upstream model weights.

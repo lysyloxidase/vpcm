@@ -90,3 +90,35 @@ interventional experiment. Recent interpretability work by Kendiukhov on
 scGPT/Geneformer attention and sparse-autoencoder probing is tracked as
 supporting evidence that co-expression representations should not be treated as
 causal mechanisms without perturbational anchors.
+
+## Phase 4 Conformal Uncertainty Quantification
+
+VPCM uses conformal prediction as the regulatory uncertainty primitive because
+it is distribution-free and model-agnostic. Split conformal prediction follows
+Vovk, Gammerman, and Shafer, with the overview by Angelopoulos and Bates in
+Foundations and Trends in Machine Learning: 10.1561/2200000101.
+
+The Phase 4 package includes:
+
+- Split conformal intervals with heteroscedastic scores
+  `|y_true - y_pred| / sigma`.
+- Mondrian group-conditional calibration per cell type.
+- CQR-style per-gene interval adjustment, with MAPIE listed as the optional
+  production estimator backend.
+- Coverage audits that require alpha=0.1 marginal coverage in the 0.88-0.92
+  lifecycle band and raise a recalibration alarm otherwise.
+
+## Phase 4 Patient-Specific LoRA
+
+LoRA adapters follow Hu et al. ICLR 2022, arXiv 2106.09685. Foundation-model
+weights stay frozen; patient-specific rank-8 adapters are trained per
+patient x cell type x foundation model. Atlas augmentation uses SCimilarity
+neighbors from CELLxGENE-style references and scTab-style large-scale
+annotation models. References include Heimberg et al. bioRxiv
+10.1101/2023.07.18.549537 and scTab by Fischer et al. Nature Communications
+15:6611, 10.1038/s41467-024-51059-5.
+
+Patient covariates are encoded as additional channels: patient embedding,
+ancestry-stratified PRS, somatic calls, disease subtype, age, sex, stage, and
+prior treatment lines. Missing channels are preserved explicitly so downstream
+fairness and audit checks can distinguish absent evidence from zero evidence.

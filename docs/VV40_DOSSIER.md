@@ -49,3 +49,17 @@ outcome modeling evidence.
    note and nearest training intervention.
 9. Audit logs capture refusal events and the full reasoning trace.
 10. Ruff, pyright strict, pytest, coverage, and DOI checks pass.
+
+## Phase 4 Quality Gates
+
+1. Split conformal marginal coverage at alpha=0.1 lies in [0.88, 0.92].
+2. Mondrian conformal conditional coverage per cell type lies in [0.88, 0.92].
+3. CQR per-gene intervals are tighter on low-variance genes.
+4. Coverage audit raises a recalibration alarm outside the V&V40 band.
+5. Patient LoRA trainer handles 5,000 patient cells plus 50,000 atlas
+   neighbors within the H100 30-minute budget fixture.
+6. LoRA VRAM overhead is <=1 GB per patient x cell-type adapter.
+7. Patient covariate encoder handles missing channels gracefully.
+8. Ancestry-stratified PRS weights load and apply correctly.
+9. Audit log captures every LoRA adapter fit with hyperparameter trace.
+10. Ruff, pyright strict, pytest, coverage, and DOI checks pass.

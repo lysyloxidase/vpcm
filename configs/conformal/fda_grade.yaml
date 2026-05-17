@@ -1,0 +1,14 @@
+split_conformal:
+  alpha: 0.1
+  heteroscedastic: true
+mondrian:
+  alpha: 0.1
+  group_key: cell_type_label
+cqr:
+  alpha: 0.1
+  per_gene: true
+coverage_audit:
+  lower: 0.88
+  upper: 0.92
+  recalibration: quarterly
+

@@ -27,6 +27,8 @@ RUN python3.11 -m pip install --upgrade pip \
     && python3.11 -m pip install -e "packages/vpcm_models[dev,hf]" \
     && python3.11 -m pip install -e "packages/vpcm_baselines[dev,sklearn]" \
     && python3.11 -m pip install -e "packages/vpcm_perturbation[dev,deep]" \
-    && python3.11 -m pip install -e "packages/vpcm_causal[dev,math]"
+    && python3.11 -m pip install -e "packages/vpcm_causal[dev,math]" \
+    && python3.11 -m pip install -e "packages/vpcm_conformal[dev,mapie]" \
+    && python3.11 -m pip install -e "packages/vpcm_lora[dev,peft]"
 
 CMD ["bash"]

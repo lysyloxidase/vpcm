@@ -41,6 +41,29 @@
 | `do_calculus_note` | Pearl-style identifiability warning. |
 | `suggested_data` | Interventional experiment that would close the support gap. |
 
+## Conformal Interval Fields
+
+| Field | Meaning |
+|---|---|
+| `lo` | Lower conformal bound for each prediction target. |
+| `hi` | Upper conformal bound for each prediction target. |
+| `qhat` | Calibrated nonconformity quantile. |
+| `alpha` | Target miscoverage rate. |
+
+## LoRA Adapter Fields
+
+| Field | Meaning |
+|---|---|
+| `adapter_id` | Stable adapter identifier. |
+| `patient_id` | Opaque patient UUID. |
+| `cell_type` | Adapter cell-type stratum. |
+| `fm_name` | Foundation model receiving the adapter. |
+| `rank` | LoRA rank, default 8. |
+| `trained_cells` | Patient cells used for this adapter. |
+| `atlas_neighbor_cells` | Retrieved atlas neighbors used for regularization. |
+| `vram_overhead_gb` | Estimated extra VRAM per adapter. |
+| `mean_shift` | Fixture patient-vs-atlas expression shift. |
+
 ## Identifier Standards
 
 - Genes: Ensembl IDs, human GENCODE v45 / Ensembl 111.

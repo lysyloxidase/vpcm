@@ -20,3 +20,10 @@
 - Add MC-dropout uncertainty and mandatory baseline reporting per prediction.
 - Add interventional support manifold and do-calculus refusal reports.
 - Add refusal audit-log trace coverage and Phase 3 quality gates.
+
+## 0.4.0
+
+- Add split conformal, Mondrian conformal, CQR, and coverage audit.
+- Add patient-specific LoRA trainer with rank-8 adapter metadata.
+- Add SCimilarity/scTab-style atlas retrieval and patient covariate encoding.
+- Add LoRA adapter audit-log trace coverage and Phase 4 quality gates.
