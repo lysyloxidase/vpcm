@@ -195,3 +195,35 @@ missing.
 The report bundle contains `report.json`, `report.pdf`, `audit.jsonl`, and
 `provenance.yaml`. Section F of the PDF-like artifact is reserved for the
 non-negotiable Csendes/Ahlmann-Eltze baseline comparison.
+
+## Phase 7 Regulatory Dossier and Pre-Submission Package
+
+The final regulatory layer converts the accumulated CI, benchmark, and audit
+evidence into reusable submission artifacts. `VV40DossierGenerator` compiles
+all nine ASME V&V 40 dimensions from deterministic evidence items. The
+dimensions cover code verification, calculation verification, input-data
+validation, output-data validation, COU applicability, model influence,
+decision consequence, risk assessment, and lifecycle maintenance.
+
+`FDA7StepCredibilityMap` maps the Jan 2025 FDA AI credibility framework to
+VPCM's specific question of interest, restricted COU, Significant risk tier,
+credibility plan, executed benchmarks, signed credibility report, and adequacy
+decision. `SignedModelCard` adds intended use, out-of-scope use, DVC
+provenance, evaluation results, beat-the-mean transparency, refusal rates,
+known biases, maintenance cadence, and an Ed25519 signature.
+
+`ProspectiveBlindedBenchmark` freezes 13 pre-registered gates before
+unblinding: beat-mean deltas, IID/OOD drug perturbation Pearson, GDSC response,
+cell-type annotation macro-F1, OOD refusal recall, in-support refusal FPR,
+alpha=0.1 conformal coverage, biomarker projection Pearson, survival C-index,
+immunotherapy AUROC, and reproducibility cosine. The fixture reports all gates
+as passing, while the API preserves transparent failure reporting for missed
+thresholds.
+
+`FDATypeCPackage` assembles a cover letter, <=25-page briefing document,
+benchmark table, V&V 40 appendix, signed model-card appendix, code
+availability statement, and six yes/no questions for the Agency. The
+regulatory docs also track EMA AI medicinal-product lifecycle guidance, MHRA
+Software and AI as a Medical Device materials, Health Canada ML-enabled
+medical-device guidance, NMPA AI medical-device guideline summaries, and the
+Jan 2026 FDA-EMA Good AI Practice principles.

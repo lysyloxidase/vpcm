@@ -1,0 +1,19 @@
+vv40:
+  standard: ASME V&V 40-2018
+  dimensions_required: 9
+  output: docs/VV40_DOSSIER.pdf
+fda_7step:
+  docket: FDA-2024-D-4689
+  steps_required: 7
+model_card:
+  signature: Ed25519
+  version: v1.0.0
+prospective_benchmark:
+  blinded: true
+  thresholds_required: 13
+type_c:
+  briefing_page_limit: 25
+  questions_required: 6
+  questions_yes_no: true
+tag:
+  release: v1.0.0

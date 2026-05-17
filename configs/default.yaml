@@ -11,6 +11,7 @@ defaults:
   - biomarker: phase5
   - outcome: phase6
   - pipeline: vpcm_v1
+  - regulatory: phase7
   - _self_
 
 context_of_use:

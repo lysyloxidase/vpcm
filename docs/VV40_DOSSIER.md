@@ -15,9 +15,10 @@
 
 ## Validation Gates
 
-Later phases will bind these verification gates to perturbation prediction,
-OOD refusal, conformal coverage, pathway projection, biomarker projection, and
-outcome modeling evidence.
+VPCM v1.0.0 binds these verification gates to perturbation prediction, OOD
+refusal, conformal coverage, pathway projection, biomarker projection, outcome
+modeling evidence, prospective benchmark thresholds, and signed regulatory
+artifacts.
 
 ## Phase 2 Quality Gates
 
@@ -94,3 +95,43 @@ outcome modeling evidence.
 9. Audit log captures every prediction with provenance.
 10. Two identical fixed-seed fixture runs produce identical signed reports.
 11. Ruff, pyright strict, pytest, coverage, and DOI checks pass.
+
+## Phase 7 Quality Gates
+
+1. `VV40DossierGenerator` auto-generates a dossier artifact from CI evidence
+   with zero manual edits.
+2. All nine ASME V&V 40 dimensions are represented: code verification,
+   calculation verification, input-data validation, output-data validation,
+   COU applicability, model influence, decision consequence, risk assessment,
+   and lifecycle maintenance.
+3. `FDA7StepCredibilityMap` instantiates all seven FDA credibility steps.
+4. `SignedModelCard` round-trips through Ed25519 verification.
+5. `ProspectiveBlindedBenchmark` evaluates all 13 pre-registered thresholds
+   and records transparent failures when any threshold is missed.
+6. `FDATypeCPackage` generates a <=25-page briefing document.
+7. All six FDA questions are formulated as yes/no questions.
+8. EMA, MHRA, Health Canada, NMPA, and FDA-EMA cross-references are
+   documented under `docs/regulatory/`.
+9. README hero states the final v1.0.0 regulatory posture.
+10. CHANGELOG covers Phase 1 through v1.0.0.
+11. Final integration tests, ruff, pyright strict, coverage, and DOI checks
+    pass.
+
+## V&V 40 Dimensions
+
+1. Verification - Code: coverage, CI, ruff, pyright strict.
+2. Verification - Calculation: deterministic fixed-seed execution,
+   reproducibility cosine, conformal coverage conservation, signed reports.
+3. Validation - Input Data: lamindb/DVC provenance, ID harmonization,
+   per-dataset QC, iLISI/kBET batch flags.
+4. Validation - Output Data: Section 8 thresholds, beat-the-mean transparency,
+   prospective benchmark fixture.
+5. Applicability - COU Match: enrichment, repurposing, and biomarker planning
+   only; dosing, diagnosis, primary endpoints, and direct treatment decisions
+   remain out of scope.
+6. Model Influence: High, because VPCM can inform trial design.
+7. Decision Consequence: Moderate under the restricted COU.
+8. Risk Assessment: Significant tier, requiring full credibility evidence.
+9. Life-Cycle Maintenance: quarterly drift monitoring, quarterly conformal
+   recalibration, annual CELLxGENE refresh, and updated regulatory
+   cross-references.

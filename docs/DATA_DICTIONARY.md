@@ -107,6 +107,19 @@
 | `baseline_report` | Mandatory train-mean/ridge transparency section. |
 | `refusal_flag` | Whether the causal support gate refused the query. |
 
+## Regulatory Artifact Fields
+
+| Field | Meaning |
+|---|---|
+| `dimension` | One ASME V&V 40 credibility dimension. |
+| `risk_relevance` | Why the dimension matters for the Significant-risk COU. |
+| `evidence_items` | CI, benchmark, provenance, or audit evidence attached to a dossier section. |
+| `artifact_type` | Generated artifact class such as V&V dossier, model card, or Type C briefing. |
+| `validation_status` | `pass`, `planned`, `documented`, or transparent failure status. |
+| `page_count` | Conservative page estimate for briefing/dossier constraints. |
+| `pre_registered_threshold` | Immutable benchmark threshold frozen before prospective unblinding. |
+| `agency_question` | Yes/no FDA Type C meeting question. |
+
 ## Identifier Standards
 
 - Genes: Ensembl IDs, human GENCODE v45 / Ensembl 111.

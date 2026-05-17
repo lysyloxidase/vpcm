@@ -11,10 +11,10 @@ defaults:
   - biomarker: phase5
   - outcome: phase6
   - pipeline: vpcm_v1
+  - regulatory: phase7
   - _self_
 
 version: vpcm_v1
 context_of_use:
   credibility_tier: SIGNIFICANT
   ood_refusal_recall_threshold: 0.95
-

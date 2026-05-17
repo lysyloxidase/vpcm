@@ -1,8 +1,14 @@
 # VPCM
 
+First open AI/ML system with do-calculus refusal gate and FDA-grade
+credibility for patient-specific perturbation prediction.
+
 VPCM is a patient-specific, cell-type-specific causal perturbation prediction
-system. Phase 1 establishes the monorepo, governance, MLOps tooling, and
-harmonized data layer for all training and validation datasets.
+system. Version 1.0.0 includes the full Phase 1-7 stack: harmonized data,
+foundation-model ensemble, mandatory beat-the-mean baselines, perturbation
+predictors, causal refusal, conformal uncertainty, patient LoRA, mechanism and
+biomarker projection, outcome heads, signed prediction reports, and regulatory
+dossier generation.
 
 The repo is intentionally usable before large data pulls are available:
 loaders expose deterministic fixture mode by default, while package metadata
@@ -36,10 +42,13 @@ RDKit, PyTorch, and downstream model work.
   multi-omic fusion outcome heads.
 - `packages/vpcm_pipeline`: single signed `VPCM.predict()` API, report bundle
   generation, provenance, and FastAPI inference entrypoint.
+- `packages/vpcm_regulatory`: ASME V&V 40 dossier generator, FDA 7-step
+  credibility map, signed model card, prospective blinded benchmark fixture,
+  and Type C pre-submission package assembly.
 - `.github/workflows`: ruff, pyright strict, pytest, coverage, and nightly DOI
   verification.
-- `docs`: COU, FDA 7-step mapping, V&V40 dossier scaffold, architecture,
-  research references, and data dictionary.
+- `docs`: COU, FDA 7-step mapping, V&V40 dossier, architecture, research
+  references, data dictionary, and international regulatory cross-references.
 
 ## Local Smoke Test
 
@@ -52,10 +61,17 @@ For full CI parity:
 ```bash
 python -m pip install -e "packages/vpcm_core[dev]"
 python -m pip install -e "packages/vpcm_data[dev]"
+python -m pip install -e "packages/vpcm_models[dev]"
+python -m pip install -e "packages/vpcm_baselines[dev]"
+python -m pip install -e "packages/vpcm_perturbation[dev]"
+python -m pip install -e "packages/vpcm_causal[dev]"
+python -m pip install -e "packages/vpcm_conformal[dev]"
+python -m pip install -e "packages/vpcm_lora[dev]"
 python -m pip install -e "packages/vpcm_mechanism[dev]"
 python -m pip install -e "packages/vpcm_biomarker[dev]"
 python -m pip install -e "packages/vpcm_outcome[dev]"
 python -m pip install -e "packages/vpcm_pipeline[dev]"
+python -m pip install -e "packages/vpcm_regulatory[dev]"
 make ruff
 make pyright
 make coverage

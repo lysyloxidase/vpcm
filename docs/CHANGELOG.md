@@ -1,5 +1,17 @@
 # Changelog
 
+## 1.0.0
+
+- Add ASME V&V 40-2018 dossier generator with all nine credibility dimensions.
+- Add FDA Jan 2025 7-step credibility map, signed model card, and Type C
+  pre-submission package assembly.
+- Add prospective blinded benchmark fixture with all 13 pre-registered
+  thresholds and transparent failure reporting.
+- Add EMA, MHRA, Health Canada, NMPA, and FDA-EMA Good AI Practice
+  cross-reference docs.
+- Update README hero, architecture, data dictionary, CI, Docker, and coverage
+  wiring for the final Phase 1-7 v1.0.0 monorepo.
+
 ## 0.1.0
 
 - Scaffold Phase 1 VPCM monorepo.

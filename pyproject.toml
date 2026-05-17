@@ -39,6 +39,7 @@ include = [
   "packages/vpcm_biomarker/src",
   "packages/vpcm_outcome/src",
   "packages/vpcm_pipeline/src",
+  "packages/vpcm_regulatory/src",
   "apps/api",
   "packages/vpcm_core/tests",
   "packages/vpcm_data/tests",
@@ -52,6 +53,7 @@ include = [
   "packages/vpcm_biomarker/tests",
   "packages/vpcm_outcome/tests",
   "packages/vpcm_pipeline/tests",
+  "packages/vpcm_regulatory/tests",
   "scripts",
 ]
 pythonVersion = "3.9"
@@ -70,6 +72,7 @@ extraPaths = [
   "packages/vpcm_biomarker/src",
   "packages/vpcm_outcome/src",
   "packages/vpcm_pipeline/src",
+  "packages/vpcm_regulatory/src",
   ".",
 ]
 
@@ -88,6 +91,7 @@ testpaths = [
   "packages/vpcm_biomarker/tests",
   "packages/vpcm_outcome/tests",
   "packages/vpcm_pipeline/tests",
+  "packages/vpcm_regulatory/tests",
 ]
 pythonpath = [
   ".",
@@ -103,6 +107,7 @@ pythonpath = [
   "packages/vpcm_biomarker/src",
   "packages/vpcm_outcome/src",
   "packages/vpcm_pipeline/src",
+  "packages/vpcm_regulatory/src",
 ]
 
 [tool.coverage.run]
@@ -120,6 +125,7 @@ source = [
   "vpcm_biomarker",
   "vpcm_outcome",
   "vpcm_pipeline",
+  "vpcm_regulatory",
 ]
 
 [tool.coverage.report]

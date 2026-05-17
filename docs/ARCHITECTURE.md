@@ -14,7 +14,8 @@ VPCM is organized as a staged monorepo:
   projection.
 - Phase 6: `vpcm_outcome` and `vpcm_pipeline` add outcome modeling and
   orchestration.
-- Phase 7: `vpcm_regulatory` will generate the V&V40 dossier.
+- Phase 7: `vpcm_regulatory` generates the V&V40 dossier, FDA 7-step map,
+  signed model card, prospective blinded benchmark, and Type C package.
 
 The Phase 1 data layer routes every resource through `DatasetCatalog`, which
 can operate in deterministic fixture mode or hand off to source-specific live
@@ -58,3 +59,13 @@ audited call: optional patient LoRA, do-calculus refusal, perturbation ensemble,
 conformal intervals, mechanism interpretation, biomarker projection, outcome
 heads, mandatory baseline deltas, signed JSON, PDF-like report bundle, and
 audit/provenance outputs.
+
+The Phase 7 regulatory layer compiles the evidence surface into submission
+artifacts. `VV40DossierGenerator` maps CI and benchmark outputs to the nine
+ASME V&V 40 dimensions, `FDA7StepCredibilityMap` instantiates every step of the
+Jan 2025 FDA credibility framework, `SignedModelCard` produces Ed25519-signed
+model-card JSON, `ProspectiveBlindedBenchmark` evaluates 13 immutable
+pre-registered gates, and `FDATypeCPackage` assembles a <=25-page Type C
+briefing bundle with six yes/no Agency questions. The international
+cross-reference docs track EMA, MHRA, Health Canada, NMPA, and FDA-EMA Good AI
+Practice alignment.
