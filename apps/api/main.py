@@ -6,7 +6,7 @@ import asyncio
 import importlib
 import importlib.util
 from collections.abc import Callable
-from typing import Protocol, TypeVar, cast
+from typing import Any, Protocol, TypeVar, cast
 
 from vpcm_core.types import Intervention, JSONValue
 from vpcm_data.base import make_fixture_adata
@@ -54,9 +54,9 @@ vpcm = VPCM(config_path="configs/vpcm_v1.yaml")
 @app.post("/predict")
 async def predict(
     patient_h5ad_path: str,
-    intervention: dict[str, JSONValue],
+    intervention: dict[str, Any],
     patient_id: str,
-    clinical_covariates: dict[str, JSONValue],
+    clinical_covariates: dict[str, Any],
     alpha: float = 0.1,
 ) -> str:
     """Run one prediction request.
@@ -77,7 +77,7 @@ async def predict(
         ),
         intervention=cast(Intervention, intervention),
         patient_id=patient_id,
-        clinical_covariates=clinical_covariates,
+        clinical_covariates=cast(dict[str, JSONValue], clinical_covariates),
         alpha=alpha,
         fit_lora=False,
     )
