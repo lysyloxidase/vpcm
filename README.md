@@ -1,6 +1,6 @@
 # VPCM
 
-![VPCM architecture overview](docs/assets/vpcm-overview.svg)
+![VPCM credibility continuum](docs/assets/vpcm-continuum.svg)
 
 First open AI/ML system with a do-calculus refusal gate and FDA-grade
 credibility controls for patient-specific perturbation prediction.
