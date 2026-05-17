@@ -1,0 +1,16 @@
+.coverage
+.mypy_cache/
+.pyright/
+.pytest_cache/
+.ruff_cache/
+.venv/
+__pycache__/
+*.egg-info/
+*.pyc
+data/raw/*
+data/harmonized/*
+data/checkpoints/*
+!data/raw/.gitkeep
+!data/harmonized/.gitkeep
+!data/checkpoints/.gitkeep
+

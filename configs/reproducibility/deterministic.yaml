@@ -1,0 +1,5 @@
+seed: 42
+cublas_workspace_config: ":4096:8"
+deterministic_algorithms: true
+cudnn_benchmark: false
+

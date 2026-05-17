@@ -1,0 +1,8 @@
+raw_dir: data/raw
+harmonized_dir: data/harmonized
+checkpoints_dir: data/checkpoints
+census_release: "2025-01-30"
+gencode_release: v45
+ensembl_release: "111"
+fixture_mode: true
+

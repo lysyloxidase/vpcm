@@ -1,0 +1,18 @@
+defaults:
+  - data: phase1
+  - reproducibility: deterministic
+  - _self_
+
+context_of_use:
+  fda_guidance_docket: FDA-2024-D-4689
+  fda_guidance_date: "2025-01-06"
+  credibility_tier: SIGNIFICANT
+  ood_refusal_recall_threshold: 0.95
+
+audit:
+  log_path: data/harmonized/audit/predictions.jsonl
+  service_identity: vpcm-phase1-service
+  purpose: clinical-trial enrichment / patient-stratification tool
+  data_version: phase1-fixture
+  dvc_hash: untracked
+

@@ -1,0 +1,27 @@
+# Data Dictionary
+
+## Required Observation Columns
+
+| Column | Meaning |
+|---|---|
+| `cell_id` | Source-stable cell identifier. |
+| `patient_id` | Opaque patient or donor identifier. |
+| `patient_hash` | SHA-256 hash of source patient h5ad bytes. |
+| `disease_id` | MONDO/DOID disease identifier. |
+| `disease_label` | Human-readable disease label. |
+| `cell_type_id` | Cell Ontology identifier. |
+| `cell_type_label` | Harmonized cell type label, compatible with scTab labels. |
+| `perturbation_type` | `control`, `drug`, `genetic`, `combination`, or related type. |
+| `perturbation` | ChEMBL ID, Ensembl ID, perturbation pair, or source label. |
+| `dose` | Dose string for chemical perturbations when available. |
+| `batch` | Batch identifier for iLISI/kBET flagging. |
+| `source_dataset` | VPCM dataset resource ID. |
+
+## Identifier Standards
+
+- Genes: Ensembl IDs, human GENCODE v45 / Ensembl 111.
+- Drugs: ChEMBL ID plus InChIKey and canonical SMILES.
+- Diseases: MONDO and DOID.
+- Cell types: Cell Ontology and scTab-compatible labels.
+- Patients: opaque UUID plus SHA-256 patient h5ad hash.
+

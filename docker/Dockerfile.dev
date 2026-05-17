@@ -1,0 +1,29 @@
+FROM nvidia/cuda:12.6.3-cudnn-devel-ubuntu22.04
+
+ENV DEBIAN_FRONTEND=noninteractive
+ENV PYTHONUNBUFFERED=1
+ENV CUBLAS_WORKSPACE_CONFIG=:4096:8
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    build-essential \
+    curl \
+    git \
+    python3.11 \
+    python3.11-dev \
+    python3.11-venv \
+    python3-pip \
+    && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /workspace/vpcm
+
+COPY pyproject.toml README.md ./
+COPY packages ./packages
+
+RUN python3.11 -m pip install --upgrade pip \
+    && python3.11 -m pip install --index-url https://download.pytorch.org/whl/cu124 \
+      torch==2.5.1 \
+    && python3.11 -m pip install -e "packages/vpcm_core[dev,ml,provenance]" \
+    && python3.11 -m pip install -e "packages/vpcm_data[dev,bio]"
+
+CMD ["bash"]
+

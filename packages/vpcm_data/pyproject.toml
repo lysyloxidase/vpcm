@@ -1,0 +1,33 @@
+[build-system]
+requires = ["hatchling>=1.26"]
+build-backend = "hatchling.build"
+
+[project]
+name = "vpcm-data"
+version = "0.1.0"
+description = "Harmonized VPCM data ingestion layer"
+readme = "../../README.md"
+requires-python = ">=3.9"
+license = { text = "Apache-2.0" }
+authors = [{ name = "VPCM Contributors" }]
+dependencies = ["vpcm-core==0.1.0"]
+
+[project.optional-dependencies]
+dev = [
+  "coverage[toml]>=7.6",
+  "pytest>=8.0",
+  "pytest-cov>=5.0",
+  "pyright>=1.1.390",
+  "ruff>=0.8.0",
+]
+bio = [
+  "anndata>=0.10",
+  "cellxgene-census>=1.15",
+  "mygene>=3.2",
+  "rdkit>=2024.3",
+  "scanpy>=1.10",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/vpcm_data"]
+

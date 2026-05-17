@@ -1,0 +1,9 @@
+data:
+  fixture_mode: true
+  max_cells_per_dataset: 2
+
+quality_gates:
+  coverage_minimum: 85
+  deterministic_cosine_minimum: 0.999999
+  ood_refusal_recall_minimum: 0.95
+

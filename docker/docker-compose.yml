@@ -1,0 +1,18 @@
+services:
+  vpcm-dev:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.dev
+    image: vpcm-dev:phase1
+    volumes:
+      - ..:/workspace/vpcm
+    working_dir: /workspace/vpcm
+    environment:
+      CUBLAS_WORKSPACE_CONFIG: ":4096:8"
+      PYTHONHASHSEED: "42"
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - capabilities: [gpu]
+
