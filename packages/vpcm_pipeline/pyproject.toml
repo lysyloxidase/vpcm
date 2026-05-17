@@ -9,7 +9,7 @@ description = "End-to-end VPCM prediction pipeline"
 readme = "../../README.md"
 requires-python = ">=3.9"
 license = { text = "Apache-2.0" }
-authors = [{ name = "VPCM Contributors" }]
+authors = [{ name = "lysyloxidase" }]
 dependencies = [
   "cryptography>=42",
   "vpcm-baselines==0.2.0",

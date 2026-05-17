@@ -9,7 +9,7 @@ description = "Harmonized VPCM data ingestion layer"
 readme = "../../README.md"
 requires-python = ">=3.9"
 license = { text = "Apache-2.0" }
-authors = [{ name = "VPCM Contributors" }]
+authors = [{ name = "lysyloxidase" }]
 dependencies = ["vpcm-core==0.1.0"]
 
 [project.optional-dependencies]
