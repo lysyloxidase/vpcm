@@ -1,6 +1,26 @@
 # VPCM
 
-![VPCM credibility continuum](docs/assets/vpcm-continuum.svg)
+```mermaid
+flowchart LR
+    A["Observational data<br/>CELLxGENE, HCA<br/>patient atlas context"]
+    B["Interventional anchors<br/>Perturb-seq, sci-Plex<br/>LINCS, Tahoe-100M"]
+    C{"Support decision<br/>Mahalanobis OOD gate"}
+    D["Explicit refusal<br/>no support, no causal claim"]
+    E["Perturbation estimate<br/>ensemble prediction<br/>mean and ridge controls"]
+    F["Calibrated report<br/>conformal intervals<br/>mechanism and outcomes"]
+    G["Regulatory evidence<br/>V&V 40, FDA 7-step<br/>signed audit trail"]
+
+    A --> B --> C
+    C -- outside support --> D
+    C -- in support --> E --> F --> G
+
+    classDef evidence fill:#eef6f7,stroke:#2f6f73,color:#162033;
+    classDef decision fill:#fff7e6,stroke:#9a6a00,color:#162033;
+    classDef refusal fill:#fdecec,stroke:#9b3434,color:#162033;
+    class A,B,E,F,G evidence;
+    class C decision;
+    class D refusal;
+```
 
 First open AI/ML system with a do-calculus refusal gate and FDA-grade
 credibility controls for patient-specific perturbation prediction.
