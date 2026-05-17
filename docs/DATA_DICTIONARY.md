@@ -17,6 +17,19 @@
 | `batch` | Batch identifier for iLISI/kBET flagging. |
 | `source_dataset` | VPCM dataset resource ID. |
 
+## Baseline Report Fields
+
+| Field | Meaning |
+|---|---|
+| `mean_baseline_pearson` | Train-set cell-type mean Pearson on top-N DE genes. |
+| `ridge_baseline_pearson` | Ridge/PCA Pearson on the same evaluation set. |
+| `vpcm_ensemble_pearson` | VPCM ensemble Pearson on the same genes. |
+| `beat_mean_delta` | `vpcm_ensemble_pearson - mean_baseline_pearson`. |
+| `beat_ridge_delta` | `vpcm_ensemble_pearson - ridge_baseline_pearson`. |
+| `target_gene_removed` | Must be true for fair Perturb-seq evaluation. |
+| `top_n` | Number of DE genes scored, typically 20. |
+| `eval_set` | Held-out split name. |
+
 ## Identifier Standards
 
 - Genes: Ensembl IDs, human GENCODE v45 / Ensembl 111.
@@ -24,4 +37,3 @@
 - Diseases: MONDO and DOID.
 - Cell types: Cell Ontology and scTab-compatible labels.
 - Patients: opaque UUID plus SHA-256 patient h5ad hash.
-

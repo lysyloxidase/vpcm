@@ -15,6 +15,10 @@ RDKit, PyTorch, and downstream model work.
   provenance manifests, and typed records.
 - `packages/vpcm_data`: 20-resource data inventory, single catalog API,
   dataset-specific loaders, harmonization, QC, and batch detection.
+- `packages/vpcm_models`: five-model single-cell foundation model ensemble
+  registry and frozen fixture adapters.
+- `packages/vpcm_baselines`: mandatory train-mean and ridge baselines plus
+  Csendes/Ahlmann-Eltze reproduction fixtures.
 - `.github/workflows`: ruff, pyright strict, pytest, coverage, and nightly DOI
   verification.
 - `docs`: COU, FDA 7-step mapping, V&V40 dossier scaffold, architecture,
@@ -42,4 +46,3 @@ VPCM is only intended for clinical-trial enrichment, drug-repurposing
 hypothesis generation, and biomarker-strategy planning. It must not be used for
 first-in-human dosing, diagnosis, primary endpoint determination, or replacing
 standard-of-care clinical decision-making.
-

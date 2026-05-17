@@ -1,0 +1,12 @@
+mean_baseline:
+  enabled: true
+  group_key: cell_type_label
+  target_gene_removed: true
+ridge_baseline:
+  enabled: true
+  n_pca: 50
+  alpha: 1.0
+report:
+  top_n: 20
+  required_for_every_prediction: true
+

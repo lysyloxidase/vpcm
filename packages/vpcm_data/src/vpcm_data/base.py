@@ -20,6 +20,7 @@ class AnnDataLike:
     obs: list[dict[str, JSONValue]]
     var_names: list[str]
     x_shape: tuple[int, int]
+    x: list[list[float]] = field(default_factory=list[list[float]])
     uns: Mapping[str, JSONValue] = field(default_factory=dict[str, JSONValue])
 
     @property
@@ -48,7 +49,10 @@ def make_fixture_adata(
     var_names = [f"ENSG{index:011d}" for index in range(1, n_vars + 1)]
     extra = dict(extra_obs or {})
     observations: list[dict[str, JSONValue]] = []
+    expression_matrix: list[list[float]] = []
     for index in range(n_obs):
+        cell_type = str(extra.get("cell_type_label", f"cell_type_{index % 2}"))
+        perturbation_label = str(extra.get("perturbation", perturbation))
         observation: dict[str, JSONValue] = {
             "cell_id": f"{resource_id}_cell_{index:04d}",
             "patient_id": f"{resource_id}_patient_{index % 3}",
@@ -56,19 +60,31 @@ def make_fixture_adata(
             "disease_id": "MONDO:0004992",
             "disease_label": "cancer",
             "cell_type_id": "CL:0000000",
-            "cell_type_label": "cell",
+            "cell_type_label": cell_type,
             "perturbation_type": perturbation_type,
-            "perturbation": perturbation,
+            "perturbation": perturbation_label,
             "dose": "0",
             "batch": f"batch_{index % 2}",
             "source_dataset": resource_id,
         }
         observation.update(extra)
         observations.append(observation)
+        expression_matrix.append(
+            [
+                round(
+                    0.1 * (gene_index + 1)
+                    + 0.01 * (index + 1)
+                    + 0.05 * (index % 2),
+                    6,
+                )
+                for gene_index in range(n_vars)
+            ]
+        )
     return AnnDataLike(
         obs=observations,
         var_names=var_names,
         x_shape=(n_obs, n_vars),
+        x=expression_matrix,
         uns={
             "resource_id": resource_id,
             "fixture_mode": True,

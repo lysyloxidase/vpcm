@@ -1,0 +1,16 @@
+{
+  "eval_set": "adamson_test_top20_target_excluded",
+  "finding": "Train-Mean Pearson >= scGPT Pearson when target gene is excluded.",
+  "ridge_pearson": 0.36,
+  "scgpt_pearson": 0.27,
+  "scgpt_target_included_pearson": 0.85,
+  "sources": [
+    "10.1101/2024.09.30.615843",
+    "10.1186/s12864-025-11600-2",
+    "10.1038/s41592-025-02772-6"
+  ],
+  "target_gene_removed": true,
+  "top_n": 20,
+  "train_mean_pearson": 0.34
+}
+

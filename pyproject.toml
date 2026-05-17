@@ -29,23 +29,42 @@ ignore = ["UP006", "UP007", "UP045"]
 include = [
   "packages/vpcm_core/src",
   "packages/vpcm_data/src",
+  "packages/vpcm_models/src",
+  "packages/vpcm_baselines/src",
   "packages/vpcm_core/tests",
   "packages/vpcm_data/tests",
+  "packages/vpcm_models/tests",
+  "packages/vpcm_baselines/tests",
   "scripts",
 ]
 pythonVersion = "3.9"
 typeCheckingMode = "strict"
 reportMissingTypeStubs = false
-extraPaths = ["packages/vpcm_core/src", "packages/vpcm_data/src"]
+extraPaths = [
+  "packages/vpcm_core/src",
+  "packages/vpcm_data/src",
+  "packages/vpcm_models/src",
+  "packages/vpcm_baselines/src",
+]
 
 [tool.pytest.ini_options]
 addopts = "-ra"
-testpaths = ["packages/vpcm_core/tests", "packages/vpcm_data/tests"]
-pythonpath = ["packages/vpcm_core/src", "packages/vpcm_data/src"]
+testpaths = [
+  "packages/vpcm_core/tests",
+  "packages/vpcm_data/tests",
+  "packages/vpcm_models/tests",
+  "packages/vpcm_baselines/tests",
+]
+pythonpath = [
+  "packages/vpcm_core/src",
+  "packages/vpcm_data/src",
+  "packages/vpcm_models/src",
+  "packages/vpcm_baselines/src",
+]
 
 [tool.coverage.run]
 branch = true
-source = ["vpcm_core", "vpcm_data"]
+source = ["vpcm_core", "vpcm_data", "vpcm_models", "vpcm_baselines"]
 
 [tool.coverage.report]
 fail_under = 85

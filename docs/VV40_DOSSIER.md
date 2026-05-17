@@ -19,3 +19,15 @@ Later phases will bind these verification gates to perturbation prediction,
 OOD refusal, conformal coverage, pathway projection, biomarker projection, and
 outcome modeling evidence.
 
+## Phase 2 Quality Gates
+
+1. All five foundation models are represented in `FOUNDATION_MODELS`.
+2. Estimated frozen ensemble memory is <=80 GB BF16/FP16.
+3. Each fixture adapter reproduces its paper headline threshold within 2%.
+4. `TrainMeanBaseline` returns the queried cell type mean and ignores
+   intervention identity.
+5. `RidgeBaseline` fits PCA(50) plus perturbation x cell-type one-hot features.
+6. `data/baselines/csendes_repro.json` records Train-Mean >= scGPT on Adamson
+   top-20 DE genes with perturbation target excluded.
+7. `BaselineReport` validates mandatory deltas and target-gene removal.
+8. Ruff, pyright strict, pytest, coverage, and DOI checks pass.

@@ -1,6 +1,8 @@
 defaults:
   - data: phase1
   - reproducibility: deterministic
+  - models: foundation_ensemble
+  - baselines: mandatory
   - _self_
 
 context_of_use:
@@ -15,4 +17,3 @@ audit:
   purpose: clinical-trial enrichment / patient-stratification tool
   data_version: phase1-fixture
   dvc_hash: untracked
-

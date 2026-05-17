@@ -23,7 +23,8 @@ RUN python3.11 -m pip install --upgrade pip \
     && python3.11 -m pip install --index-url https://download.pytorch.org/whl/cu124 \
       torch==2.5.1 \
     && python3.11 -m pip install -e "packages/vpcm_core[dev,ml,provenance]" \
-    && python3.11 -m pip install -e "packages/vpcm_data[dev,bio]"
+    && python3.11 -m pip install -e "packages/vpcm_data[dev,bio]" \
+    && python3.11 -m pip install -e "packages/vpcm_models[dev,hf]" \
+    && python3.11 -m pip install -e "packages/vpcm_baselines[dev,sklearn]"
 
 CMD ["bash"]
-

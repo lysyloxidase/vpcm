@@ -18,6 +18,7 @@ jobs:
           python -m pip install --upgrade pip
           python -m pip install -e "packages/vpcm_core[dev]"
           python -m pip install -e "packages/vpcm_data[dev]"
+          python -m pip install -e "packages/vpcm_models[dev]"
+          python -m pip install -e "packages/vpcm_baselines[dev]"
       - name: Enforce 85 percent coverage
-        run: pytest --cov=vpcm_core --cov=vpcm_data --cov-report=xml --cov-fail-under=85
-
+        run: pytest --cov=vpcm_core --cov=vpcm_data --cov=vpcm_models --cov=vpcm_baselines --cov-report=xml --cov-fail-under=85

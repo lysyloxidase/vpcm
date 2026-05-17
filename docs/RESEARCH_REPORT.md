@@ -34,3 +34,29 @@ and donor-level privacy constraints before data can leave raw storage.
 
 The scPerturb dataset list follows the Nature Methods 2024 resource
 description and source accessions published by the authors.
+
+## Phase 2 Foundation Model Ensemble
+
+| Model | Parameters | Source | DOI/Source | Caveat |
+|---|---:|---|---|---|
+| scGPT | 51M | `bowang-lab/scGPT` | 10.1038/s41592-024-02201-0 | Loses to train-mean on Perturb-seq in Csendes reproduction. |
+| scFoundation | 100M | `biomap-research/scFoundation` | 10.1038/s41592-024-02305-7 | Research-only license requires commercial review. |
+| Geneformer V2 | 104M | `ctheodoris/Geneformer` | 10.1101/2024.08.16.608180 | Oncology continual-pretraining variant tracked separately. |
+| UCE | 650M | `snap-stanford/UCE` | 10.1101/2023.11.28.568918 | Largest memory footprint in ensemble. |
+| CellPLM | 80M | `OmicsML/CellPLM` | 10.1101/2023.10.03.560734 | Cell-as-token speed advantage. |
+
+Estimated BF16/FP16 memory is 63 GB, below the Phase 2 80 GB H100 budget.
+All adapters are frozen by default; patient-specific LoRA belongs to Phase 4.
+
+## Mandatory Baselines
+
+VPCM treats train-set mean as the credibility anchor, not a toy baseline.
+Csendes et al. reported that scGPT and scFoundation can be beaten by predicting
+the train-set mean on Perturb-seq benchmarks, including Adamson, Norman, and
+Replogle, when the perturbation target gene is excluded:
+10.1101/2024.09.30.615843 and 10.1186/s12864-025-11600-2.
+
+Ahlmann-Eltze et al. extended this warning to GEARS and emphasized systematic
+evaluation of perturbation-response prediction: 10.1038/s41592-025-02772-6.
+Wenteler et al. report that PCA/ridge remains a strong baseline in PertEval-scFM
+for leave-perturbation-out evaluation: arXiv 2410.13956.

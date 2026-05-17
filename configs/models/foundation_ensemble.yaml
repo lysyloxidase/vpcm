@@ -1,0 +1,14 @@
+device: cuda:0
+dtype: bfloat16
+fixture_mode: true
+memory_budget_gb: 80
+models:
+  - scgpt
+  - scfoundation
+  - geneformer_v2
+  - uce
+  - cellplm
+quality_gates:
+  per_cell_embedding_latency_ms: 50
+  reproduce_headline_within: 0.02
+
