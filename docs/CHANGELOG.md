@@ -13,3 +13,10 @@
 - Add deterministic frozen fixture adapters for smoke and CI validation.
 - Add mandatory Train-Mean and Ridge baselines.
 - Add baseline report schema and Csendes/Ahlmann-Eltze reproduction fixture.
+
+## 0.3.0
+
+- Add five-predictor perturbation ensemble: CPA, ChemCPA, GEARS, CellOT, scGen.
+- Add MC-dropout uncertainty and mandatory baseline reporting per prediction.
+- Add interventional support manifold and do-calculus refusal reports.
+- Add refusal audit-log trace coverage and Phase 3 quality gates.

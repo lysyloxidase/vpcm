@@ -1,0 +1,16 @@
+sources:
+  - scperturb
+  - sci_plex
+  - tahoe_100m
+  - lincs_l1000
+distance:
+  metric: diagonal_mahalanobis
+  tau_ood: calibrated
+calibration:
+  target_refusal_recall: 0.95
+  target_in_support_fpr: 0.05
+refusal:
+  emit_observational_interval: true
+  cite_pearl_identifiability: true
+  audit_reasoning_trace: true
+

@@ -19,6 +19,10 @@ RDKit, PyTorch, and downstream model work.
   registry and frozen fixture adapters.
 - `packages/vpcm_baselines`: mandatory train-mean and ridge baselines plus
   Csendes/Ahlmann-Eltze reproduction fixtures.
+- `packages/vpcm_perturbation`: five-predictor perturbation ensemble with
+  MC-dropout uncertainty.
+- `packages/vpcm_causal`: interventional support manifold and do-calculus
+  refusal gate.
 - `.github/workflows`: ruff, pyright strict, pytest, coverage, and nightly DOI
   verification.
 - `docs`: COU, FDA 7-step mapping, V&V40 dossier scaffold, architecture,

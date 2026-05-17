@@ -31,3 +31,21 @@ outcome modeling evidence.
    top-20 DE genes with perturbation target excluded.
 7. `BaselineReport` validates mandatory deltas and target-gene removal.
 8. Ruff, pyright strict, pytest, coverage, and DOI checks pass.
+
+## Phase 3 Quality Gates
+
+1. CPA, ChemCPA, GEARS, CellOT, and scGen wrappers load and predict on dummy
+   data.
+2. `PerturbationEnsemble` returns 100 MC-dropout samples by default.
+3. MC-dropout produces non-zero per-gene standard deviation.
+4. Every ensemble prediction includes a validated `BaselineReport`.
+5. Norman unseen-double evaluation either beats train-mean by >=0.10 Pearson
+   delta or reports transparent failure.
+6. `InterventionalSupportManifold` builds from scPerturb, sci-Plex, Tahoe-100M,
+   and LINCS-style profiles.
+7. Tau calibration reaches refusal recall >=0.95 and in-support FPR <=0.05 in
+   fixture splits.
+8. Out-of-support queries return `RefusalReport` with Pearl identifiability
+   note and nearest training intervention.
+9. Audit logs capture refusal events and the full reasoning trace.
+10. Ruff, pyright strict, pytest, coverage, and DOI checks pass.

@@ -60,3 +60,33 @@ Ahlmann-Eltze et al. extended this warning to GEARS and emphasized systematic
 evaluation of perturbation-response prediction: 10.1038/s41592-025-02772-6.
 Wenteler et al. report that PCA/ridge remains a strong baseline in PertEval-scFM
 for leave-perturbation-out evaluation: arXiv 2410.13956.
+
+## Phase 3 Perturbation Predictor Ensemble
+
+| Predictor | Role | DOI/Source | Transparent caveat |
+|---|---|---|---|
+| CPA | Drug/dose/cell-type disentanglement | 10.15252/msb.202211517 | Requires interventional training coverage. |
+| ChemCPA | SMILES-aware unseen-compound extrapolation | NeurIPS 2022 / theislab ChemCPA | Chemistry encoder does not solve causal support. |
+| GEARS | GO/co-expression GNN for genetic perturbations | 10.1038/s41587-023-01905-6 | Can lose to ridge on Norman unseen-double splits. |
+| CellOT | Neural optimal transport | 10.1038/s41592-023-01969-x | Strong for distribution shift but support-limited. |
+| scGen | Beta-VAE latent arithmetic | 10.1038/s41592-019-0494-8 | Simple deep-family baseline, not causal by itself. |
+
+`PerturbationEnsemble` returns mean delta expression, per-gene standard
+deviation from MC-dropout, per-model deltas for disagreement analysis, and a
+mandatory `BaselineReport`.
+
+## Do-Calculus Refusal Gate
+
+The novel VPCM contribution is the explicit refusal gate. Observational
+foundation-model pretraining cannot identify p(Y|do(X)) without interventional
+support or strong DAG assumptions. The gate builds an interventional support
+manifold from scPerturb, sci-Plex, Tahoe-100M, and LINCS anchors, embeds those
+anchors in foundation-model latent space, and calibrates an OOD threshold.
+
+When a query exceeds the calibrated threshold, VPCM returns a `RefusalReport`
+with the Mahalanobis distance, nearest training intervention, wide
+observational interval, Pearl-style identifiability note, and suggested
+interventional experiment. Recent interpretability work by Kendiukhov on
+scGPT/Geneformer attention and sparse-autoencoder probing is tracked as
+supporting evidence that co-expression representations should not be treated as
+causal mechanisms without perturbational anchors.

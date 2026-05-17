@@ -30,6 +30,17 @@
 | `top_n` | Number of DE genes scored, typically 20. |
 | `eval_set` | Held-out split name. |
 
+## Refusal Report Fields
+
+| Field | Meaning |
+|---|---|
+| `reason` | Human-readable support failure explanation. |
+| `mahalanobis_distance` | Distance to nearest interventional support cluster. |
+| `nearest_training_intervention` | Closest observed interventional anchor. |
+| `wide_observational_interval` | 5th-95th percentile observational interval, not causal. |
+| `do_calculus_note` | Pearl-style identifiability warning. |
+| `suggested_data` | Interventional experiment that would close the support gap. |
+
 ## Identifier Standards
 
 - Genes: Ensembl IDs, human GENCODE v45 / Ensembl 111.

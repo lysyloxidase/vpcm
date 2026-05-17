@@ -3,6 +3,8 @@ defaults:
   - reproducibility: deterministic
   - models: foundation_ensemble
   - baselines: mandatory
+  - perturbation: ensemble
+  - causal: support_manifold
   - _self_
 
 context_of_use:

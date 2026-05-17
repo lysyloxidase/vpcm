@@ -6,8 +6,8 @@ VPCM is organized as a staged monorepo:
   reproducibility, and harmonized data access.
 - Phase 2: `vpcm_models` and `vpcm_baselines` add the foundation-model
   ensemble and mandatory beat-the-mean controls.
-- Phase 3: `vpcm_perturbation` and `vpcm_causal` will add perturbation
-  predictors and the do-calculus refusal gate.
+- Phase 3: `vpcm_perturbation` and `vpcm_causal` add perturbation predictors
+  and the do-calculus refusal gate.
 - Phase 4: `vpcm_conformal` and `vpcm_lora` will add uncertainty and
   patient-specific adapters.
 - Phase 5: `vpcm_mechanism` and `vpcm_biomarker` will add pathway and biomarker
@@ -25,3 +25,10 @@ through `FoundationModelEnsemble`. Fixture adapters are deterministic and
 frozen; live adapters require explicit checkpoint review, Hugging Face runtime
 dependencies, and GPU memory validation. Every perturbation prediction must
 carry a `BaselineReport` comparing VPCM to train-mean and ridge baselines.
+
+The Phase 3 prediction layer routes CPA, ChemCPA, GEARS, CellOT, and scGen
+through `PerturbationEnsemble`, returning ensemble mean delta expression,
+MC-dropout standard deviation, per-model deltas, and baseline deltas. The
+causal layer builds an interventional support manifold from Perturb-seq,
+sci-Plex, Tahoe-100M, and LINCS anchors. Queries outside calibrated support
+return `RefusalReport` instead of a causal estimate.

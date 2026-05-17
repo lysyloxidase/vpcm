@@ -1,0 +1,12 @@
+predictors:
+  - cpa
+  - chemcpa
+  - gears
+  - cellot
+  - scgen
+m_dropout: 20
+quality_gates:
+  mc_dropout_std_nonzero: true
+  a100_100k_query_latency_seconds: 15
+  norman_unseen_double_min_beat_mean_delta: 0.10
+
