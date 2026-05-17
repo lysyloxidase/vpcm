@@ -35,6 +35,8 @@ include = [
   "packages/vpcm_causal/src",
   "packages/vpcm_conformal/src",
   "packages/vpcm_lora/src",
+  "packages/vpcm_mechanism/src",
+  "packages/vpcm_biomarker/src",
   "packages/vpcm_core/tests",
   "packages/vpcm_data/tests",
   "packages/vpcm_models/tests",
@@ -43,6 +45,8 @@ include = [
   "packages/vpcm_causal/tests",
   "packages/vpcm_conformal/tests",
   "packages/vpcm_lora/tests",
+  "packages/vpcm_mechanism/tests",
+  "packages/vpcm_biomarker/tests",
   "scripts",
 ]
 pythonVersion = "3.9"
@@ -57,6 +61,8 @@ extraPaths = [
   "packages/vpcm_causal/src",
   "packages/vpcm_conformal/src",
   "packages/vpcm_lora/src",
+  "packages/vpcm_mechanism/src",
+  "packages/vpcm_biomarker/src",
 ]
 
 [tool.pytest.ini_options]
@@ -70,6 +76,8 @@ testpaths = [
   "packages/vpcm_causal/tests",
   "packages/vpcm_conformal/tests",
   "packages/vpcm_lora/tests",
+  "packages/vpcm_mechanism/tests",
+  "packages/vpcm_biomarker/tests",
 ]
 pythonpath = [
   "packages/vpcm_core/src",
@@ -80,6 +88,8 @@ pythonpath = [
   "packages/vpcm_causal/src",
   "packages/vpcm_conformal/src",
   "packages/vpcm_lora/src",
+  "packages/vpcm_mechanism/src",
+  "packages/vpcm_biomarker/src",
 ]
 
 [tool.coverage.run]
@@ -93,6 +103,8 @@ source = [
   "vpcm_causal",
   "vpcm_conformal",
   "vpcm_lora",
+  "vpcm_mechanism",
+  "vpcm_biomarker",
 ]
 
 [tool.coverage.report]

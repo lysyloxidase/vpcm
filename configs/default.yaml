@@ -7,6 +7,8 @@ defaults:
   - causal: support_manifold
   - conformal: fda_grade
   - lora: patient_specific
+  - mechanism: phase5
+  - biomarker: phase5
   - _self_
 
 context_of_use:

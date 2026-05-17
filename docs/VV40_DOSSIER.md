@@ -63,3 +63,19 @@ outcome modeling evidence.
 8. Ancestry-stratified PRS weights load and apply correctly.
 9. Audit log captures every LoRA adapter fit with hyperparameter trace.
 10. Ruff, pyright strict, pytest, coverage, and DOI checks pass.
+
+## Phase 5 Quality Gates
+
+1. decoupleR-style pathway projection returns top-10 pathways and TF
+   activities with FDR <0.05.
+2. CellOracle-style GRN simulation cross-validates delta direction with
+   Spearman concordance >=0.6 on top genes.
+3. Attention attribution emits the co-expression-not-causation caveat for
+   every gene attribution.
+4. CIBERSORTx-style deconvolution benchmark error is <=5%.
+5. Organ ridge heads return held-out Pearson fixture >=0.60.
+6. Bagaev TME classification fixture macro-F1 is >=0.70.
+7. Exhaustion and IFN-gamma signature fixtures meet Spearman/AUROC gates.
+8. CellChat v2, LIANA+, NicheNet, TCR, and spatial heads run on dummy data.
+9. Audit logs capture mechanism and biomarker projections with method traces.
+10. Ruff, pyright strict, pytest, coverage, and DOI checks pass.

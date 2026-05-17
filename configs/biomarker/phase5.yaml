@@ -1,0 +1,29 @@
+cibersortx:
+  newman_2019_error_threshold_pct: 5.0
+organ_ridges:
+  top_n_genes: 100
+  pearson_threshold: 0.60
+  organs:
+    - liver
+    - kidney
+    - bone_marrow
+    - lung
+    - heart
+    - immune_systemic
+tme_signatures:
+  bagaev_macro_f1_threshold: 0.70
+  exhaustion_spearman_threshold: 0.65
+  ifn_gamma_auroc_threshold: 0.70
+tcr_repertoire:
+  optional: true
+  tools:
+    - mvTCR
+    - scirpy
+spatial:
+  optional: true
+  platforms:
+    - Visium
+    - Visium HD
+    - MERFISH
+    - Xenium
+

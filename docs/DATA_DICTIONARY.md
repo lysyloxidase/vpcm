@@ -64,6 +64,27 @@
 | `vram_overhead_gb` | Estimated extra VRAM per adapter. |
 | `mean_shift` | Fixture patient-vs-atlas expression shift. |
 
+## Mechanism Report Fields
+
+| Field | Meaning |
+|---|---|
+| `pathway_hits` | Top pathway effects with source database, direction, Z-score, and FDR. |
+| `tf_activities` | DoRothEA-style transcription factor activities. |
+| `spearman_concordance` | Agreement between VPCM delta and GRN-propagated delta on top genes. |
+| `interactions` | Ligand-receptor communication changes between sender and receiver cell types. |
+| `caveat` | Required note when an attribution is correlational rather than causal. |
+
+## Biomarker Report Fields
+
+| Field | Meaning |
+|---|---|
+| `pseudo_bulk_delta` | Cell-type-proportion-weighted tissue delta expression. |
+| `normalized_proportions` | TME proportions normalized before pseudo-bulk aggregation. |
+| `predictions` | Organ-specific projected clinical lab values. |
+| `pearson_benchmark` | Fixture held-out organ ridge Pearson gate, threshold >=0.60. |
+| `bagaev_type` | Projected tumor microenvironment class. |
+| `responder_probability` | IFN-gamma / exhaustion-derived immunotherapy response score. |
+
 ## Identifier Standards
 
 - Genes: Ensembl IDs, human GENCODE v45 / Ensembl 111.

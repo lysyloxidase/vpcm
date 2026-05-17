@@ -27,3 +27,13 @@
 - Add patient-specific LoRA trainer with rank-8 adapter metadata.
 - Add SCimilarity/scTab-style atlas retrieval and patient covariate encoding.
 - Add LoRA adapter audit-log trace coverage and Phase 4 quality gates.
+
+## 0.5.0
+
+- Add decoupleR-style pathway projection and DoRothEA TF activity fixtures.
+- Add CellOracle-style GRN simulation, CellChat/LIANA/NicheNet communication
+  projection, and mandatory attention attribution caveats.
+- Add CIBERSORTx-style pseudo-bulk projection, organ ridge lab heads, Bagaev
+  TME signatures, optional TCR repertoire integration, and optional spatial
+  transcriptomics integration.
+- Add projection audit-log trace coverage and Phase 5 quality gates.

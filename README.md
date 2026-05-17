@@ -9,7 +9,7 @@ loaders expose deterministic fixture mode by default, while package metadata
 declares the live dependencies for CELLxGENE Census, AnnData, DVC, LaminDB,
 RDKit, PyTorch, and downstream model work.
 
-## Phase 1 Scope
+## Implemented Scope
 
 - `packages/vpcm_core`: COU config, deterministic execution, audit logging,
   provenance manifests, and typed records.
@@ -27,6 +27,11 @@ RDKit, PyTorch, and downstream model work.
   lifecycle coverage audits.
 - `packages/vpcm_lora`: patient-specific rank-8 LoRA adapters, atlas retrieval,
   and patient covariate encoding.
+- `packages/vpcm_mechanism`: decoupleR-style pathway projection, CellOracle
+  GRN simulation, CellChat/LIANA/NicheNet communication inference, and
+  attention attribution caveats.
+- `packages/vpcm_biomarker`: CIBERSORTx-style pseudo-bulk projection, organ
+  ridge lab heads, Bagaev TME signatures, TCR repertoire, and spatial context.
 - `.github/workflows`: ruff, pyright strict, pytest, coverage, and nightly DOI
   verification.
 - `docs`: COU, FDA 7-step mapping, V&V40 dossier scaffold, architecture,
@@ -43,6 +48,8 @@ For full CI parity:
 ```bash
 python -m pip install -e "packages/vpcm_core[dev]"
 python -m pip install -e "packages/vpcm_data[dev]"
+python -m pip install -e "packages/vpcm_mechanism[dev]"
+python -m pip install -e "packages/vpcm_biomarker[dev]"
 make ruff
 make pyright
 make coverage

@@ -1,0 +1,22 @@
+decoupler:
+  method: ulm
+  top_n: 10
+  fdr_threshold: 0.05
+  databases:
+    - PROGENy
+    - DoRothEA
+    - Reactome
+    - KEGG
+    - WikiPathways
+cell_oracle:
+  top_genes: 20
+  concordance_threshold: 0.6
+cell_chat:
+  tools:
+    - CellChat v2
+    - LIANA+
+    - NicheNet
+  top_n: 10
+attention:
+  require_causality_caveat: true
+

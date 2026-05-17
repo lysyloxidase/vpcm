@@ -122,3 +122,40 @@ Patient covariates are encoded as additional channels: patient embedding,
 ancestry-stratified PRS, somatic calls, disease subtype, age, sex, stage, and
 prior treatment lines. Missing channels are preserved explicitly so downstream
 fairness and audit checks can distinguish absent evidence from zero evidence.
+
+## Phase 5 Mechanism-of-Action Interpretation
+
+VPCM separates mechanism interpretation from causal estimation. The mechanism
+head explains a predicted delta expression vector; it does not override the
+do-calculus support gate. Pathway projection follows the decoupleR framework
+from Badia-i-Mompel et al., 10.1093/bioadv/vbac016, with PROGENy, DoRothEA,
+Reactome, KEGG, and WikiPathways-style resources. KEGG is tracked from
+Kanehisa and Goto, 10.1093/nar/28.1.27.
+
+`DecouplerPathwayProjector` returns top pathways and transcription-factor
+activities with direction, Z-score, FDR, and contributing genes. The
+`CellOracleGRNSimulator` follows Kamimoto et al., 10.1038/s41586-022-05688-9,
+as a GRN propagation cross-check, with the caveat that prior TF-target networks
+are incomplete and correlational without experimental validation.
+
+`CellChatV2Communicator` exposes a shared interface for CellChat v2, LIANA+,
+and NicheNet-style ligand-receptor communication changes. Attention-derived
+gene importance always carries the explicit warning that attention can encode
+co-expression rather than causation and must be cross-validated against
+perturbational, GRN, pathway, or Mendelian-randomization evidence.
+
+## Phase 5 Biomarker Projection
+
+Clinical biomarker projection maps per-cell-type delta expression to
+pseudo-bulk tissue delta and then to organ-specific clinical readouts.
+`CIBERSORTxProjector` follows the CIBERSORTx deconvolution framing from Newman
+et al., 10.1038/s41587-019-0114-2. `OrganRidgeProjectors` expose liver,
+kidney, bone marrow, lung, heart, and systemic immune lab heads with held-out
+Pearson performance gates.
+
+`TMESignatureHeads` track Bagaev tumor-microenvironment classes, T-cell
+exhaustion, IFN-gamma response, TMB projection, and responder probability.
+Optional `TCRRepertoireHead` and `SpatialTranscriptomicsIntegrator` add matched
+TCR-seq and spatial transcriptomics context when those modalities are present.
+Missing optional modalities are reported explicitly rather than imputed as zero
+evidence.
